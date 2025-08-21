@@ -1,0 +1,483 @@
+Primeira questão:
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n;
+  std::cin >> n;
+  std::cout << endl;
+
+  for (int i = 1; i <= n; i++) {
+    std::cout << i << " ";
+  }
+  return 0;
+}
+
+-----------------------------------------------------
+
+Segunda questão:
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n;
+
+  while (n != 0) {
+    std::cout << "Digite seu número: ";
+    std::cin >> n;
+    if (n == 0)
+      exit(0);
+    cout << n * n << endl;
+  }
+  return 0;
+}
+
+--------------------------------------------------
+
+Terceira questão: 
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n, contador, incrementador;
+  std::cin >> n;
+  contador = 0;
+  incrementador = 0;
+
+  while (contador != n) {
+    if (incrementador % 2) {
+      cout << incrementador << " ";
+      contador++;
+    }
+    incrementador++;
+  }
+  return 0;
+}
+----------------------------------------------------
+Quarta questão:
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n;
+  std::cout << "Número de alunos: ";
+  std::cin >> n;
+  int nota = 0;
+  int maiorNota = 0;
+  int menorNota = 11;
+
+  for (int i = 1; i <= n; i++) {
+    std::cout << "Nota do aluno " << i << " : ";
+    std::cin >> nota;
+
+    if (nota < 0 || nota > 10) {
+      cout << "Por favor, insira notas válidas!" << endl;
+      exit(0);
+    }
+
+    if (nota > maiorNota)
+      maiorNota = nota;
+
+    if (nota < menorNota)
+      menorNota = nota;
+  }
+
+  std::cout << "Maior nota: " << maiorNota << endl;
+  std::cout << "Menor nota: " << menorNota << endl;
+
+  return 0;
+}
+
+----------------------------------------------
+Quinta questão: 
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n;
+  cin >> n;
+  int somaPares = 0;
+
+  for (int i = 0; i <= n; i++) {
+    if (i % 2 == 0)
+      somaPares += i;
+  }
+  cout << somaPares << endl;
+  return 0;
+}
+
+--------------------------------------------- 
+
+Sexta questão:
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int a;
+  cin >> a;
+
+  if (a < 0)
+    return 0;
+
+  int contador = a;
+
+  while (contador > 2) {
+    a *= contador - 1;
+    contador -= 1;
+  }
+
+  cout << a << endl;
+
+  return 0;
+}
+
+---------------------------------------------------------------
+Sétima questão:
+
+#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int a, b, n, contador;
+  std::cin >> a >> b >> n;
+  int incrementador = 0;
+  contador = 0;
+
+  while (contador != n) {
+    if (incrementador % a == 0 || incrementador % b == 0) {
+      cout << incrementador << " ";
+      contador++;
+    }
+    incrementador++;
+  }
+  return 0;
+}
+
+------------------------------
+
+Oitava questão:
+
+#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n;
+  std::cin >> n;
+
+  for (int i = 3; i <= n; i++) {
+    if ((i - 2) * (i - 1) * i == n) {
+      cout << "Triangular" << endl;
+      break;
+    }
+  }
+  return 0;
+}
+
+------------------------------------
+
+Nona questão:
+
+#include "iostream"
+#include <math.h>
+using namespace std;
+int isPrime(int k) {
+  if (k <= 1)
+    return 0;
+
+  for (unsigned int i = 2; i <= (unsigned int)sqrt(k); i++) {
+    if (k % i)
+      return 1;
+  }
+  return 0;
+}
+
+int main(int argc, char *argv[]) {
+  int x;
+  cout << "Enter a num: ";
+  std::cin >> x;
+
+  cout << isPrime(x) << endl;
+  return 0;
+}
+
+--------------------------------------
+
+Décima questão: 
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int valorAtual = 0;
+  int diaAtual = 0;
+  int melhorDia = 0;
+  int melhorDiaValor = 0;
+
+  for (int i = 0; i <= 30; i++) {
+    cout << "Discos vendidos no dia " << i << ": ";
+    cin >> valorAtual;
+    diaAtual = i;
+
+    if (valorAtual > melhorDiaValor) {
+      melhorDiaValor = valorAtual;
+      melhorDia = diaAtual;
+    }
+  }
+  cout << melhorDia << " : " << melhorDiaValor;
+  return 0;
+}
+
+-------------------------------------------------------------
+
+Décima primeira questão: 
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n;
+  std::cout << "Qual vai ser o tamanho da sequencia? ";
+  cin >> n;
+  int valorA;
+  int valorB;
+  int streak = 1;
+
+  std::cout << "Digite uma sequencia com " << n << " números!" << endl;
+
+  for (int i = 1; i <= n; i++) {
+    std::cout << "Elemento " << i << " : ";
+    cin >> valorA;
+    if (valorA == valorB)
+      streak++;
+    valorB = valorA;
+  }
+  std::cout << "Há " << streak << " números consecutivos" << endl;
+  return 0;
+}
+
+-------------------------------------------------------------------
+
+Décima segunda: 
+
+#include "iostream"
+#include <iomanip>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  float altura, maiorAltura, menorAltura, alturaTotalM, alturaTotalH;
+  int n;
+  menorAltura = 999.0;
+  maiorAltura = 0;
+  alturaTotalH = 0;
+  alturaTotalM = 0;
+  int quantH = 0;
+  int quantM = 0;
+  char sexo;
+
+  std::cout << "Quantas pessoas iremos analizar? ";
+  cin >> n;
+
+  for (int i = 1; i <= n; i++) {
+
+    std::cout << "Pessoa " << i << ": " << endl;
+    std::cout << "Altura: ";
+    std::cin >> altura;
+    std::cout << "Sexo: ";
+    std::cin >> sexo;
+
+    if (sexo == 'M') {
+      alturaTotalM += altura;
+      quantM++;
+    }
+
+    if (sexo == 'H') {
+      alturaTotalH += altura;
+      quantH++;
+    }
+
+    if (altura > maiorAltura)
+      maiorAltura = altura;
+
+    if (altura < menorAltura)
+      menorAltura = altura;
+  }
+
+  cout << endl;
+
+  float mediaM;
+  if (quantM != 0)
+    mediaM = alturaTotalM / quantM;
+  else
+    mediaM = 0;
+
+  float mediaH;
+  if (quantH != 0)
+    mediaH = alturaTotalH / quantH;
+  else
+    mediaH = 0;
+
+  std::cout << "Maior altura: " << maiorAltura << " metros." << endl;
+  std::cout << "Menor altura: " << menorAltura << " metros." << endl;
+  std::cout << "Altura média masculina: " << fixed << setprecision(1) << mediaH
+            << " metros." << endl;
+  std::cout << "Altura média feminina: " << fixed << setprecision(1) << mediaM
+            << " metros." << endl;
+
+  float percentual;
+
+  if (mediaH > mediaM) {
+    if (mediaM == 0) {
+      cout << "Não é possível gerar um percentual relativo porque não há "
+              "nenhuma mulher.";
+      return 0;
+    }
+    percentual = (((mediaH - mediaM) / mediaM) * 100);
+    std::cout << "Os homens são " << fixed << setprecision(1) << percentual
+              << "% mais altos que as mulheres" << endl;
+  }
+
+  else if (mediaM > mediaH) {
+    if (mediaH == 0) {
+      cout << "Não é possível gerar um percentual relativo porque não há "
+              "nenhum homem.";
+      return 0;
+    }
+    percentual = (((mediaM - mediaH) / mediaH) * 100);
+    std::cout << "As mulheres são " << fixed << setprecision(1) << percentual
+              << "% mais altas que os homens" << endl;
+  }
+  return 0;
+}
+
+-------------------------------------------------------------------------------
+
+Décima terceira:
+
+#include "iostream"
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  // usando o algoritmo de euclides
+  int a, b, c;
+  cout << "Primeiro Número: ";
+  cin >> a;
+  std::cout << "Segundo Número: ";
+  cin >> b;
+
+  if (a == 0) {
+    std::cout << "O MDC é " << b << std::endl;
+    return 0;
+  }
+  if (b == 0) {
+    std::cout << "O MDC é " << a << std::endl;
+    return 0;
+  }
+
+  if(a < b){
+    int temp = a;
+    a = b;
+    b = temp; // a sempre vai ser o maior e b sempre o menor 
+  }
+
+  while (b!=0) {
+   int resto = a % b; 
+   a = b;
+   b = resto;
+  }
+  std::cout << "O MDC é " << a << endl;
+
+  return 0;
+}
+
+--------------------------------------------------------------- 
+
+Décima quarta: 
+
+#include "iostream"
+using namespace std;
+
+// CALCULANDO O MMC USANDO DO MMC, SABENDO QUE MMM(a,n) = (axb) / MDC(a,b)
+
+long long mdc(long long a, long long b) {
+  if (a == 0)
+    return b;
+  if (b == 0)
+    return a;
+
+  if (a < b) {
+    long long temp = a;
+    a = b;
+    b = temp;
+  }
+
+  while (b != 0) {
+    long long resto = a % b;
+    a = b;
+    b = resto;
+  }
+
+  return a;
+}
+
+int main(int argc, char *argv[]) {
+  long long x, y;
+  std::cout << "Primeiro número: ";
+  std::cin >> x;
+  std::cout << "Segundo número: ";
+  std::cin >> y;
+
+  long long resultado = (x / mdc(x, y)) * y;
+
+  std::cout << "O MMC é: " << resultado << endl;
+
+  return 0;
+}
+
+--------------------------------------------------------
+
+Décima quinta: 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  int n1, n2;
+  cin >> n1 >> n2;
+
+  std::string primeiroNum = to_string(n1);
+  std::string segundoNum = to_string(n2);
+
+  if (primeiroNum.size() >= segundoNum.size()) {
+    cout << "Insira números válidos" << endl;
+    exit(0);
+  }
+
+  string aux = "";
+  for (size_t i = 0; i <= segundoNum.size() - primeiroNum.size(); ++i) {
+    aux = "";
+    for (size_t j = 0; j < primeiroNum.size(); ++j) {
+      if (segundoNum[i + j] == primeiroNum[j]) {
+        aux += segundoNum[i + j];
+      } else
+        break;
+    }
+
+    if (aux == primeiroNum) {
+      break;
+    }
+  }
+
+  if (aux == primeiroNum)
+    cout << n1 << " é subnúmero de " << n2 << endl;
+  else
+    cout << n1 << " não é subnúmero de " << n2 << endl;
+
+  return 0;
+}
