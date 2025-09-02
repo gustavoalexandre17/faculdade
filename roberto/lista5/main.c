@@ -1,3 +1,20 @@
+// questao 2
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  char *usr = "200700";
+  const int size = strlen(usr);
+
+  int aux = size;
+  for (int i = 0; i < size; i++) {
+    if ()
+      printf("%c", usr[i]);
+    aux--;
+  }
+}
+
 /*
 // questao 14
 #include <stdio.h>
