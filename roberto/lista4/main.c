@@ -90,8 +90,6 @@ int main(int argc, char *argv[]) {
 */
 
 // terceira questao
-
-/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -127,10 +125,12 @@ int main(int argc, char *argv[]) {
   int n2 = atoi(sv2);
   int final = n1 + n2;
 
-  printf("%d\n", final);
+  char buffer[20];
+
+  sprintf(buffer, "%d", final); // resultado
+
   return 0;
 }
-*/
 
 // quarta questao
 /*
